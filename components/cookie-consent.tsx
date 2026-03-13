@@ -113,7 +113,7 @@ export function CookieConsent() {
       }
 
       setIsSettingsOpen(true);
-      setIsBannerVisible(true);
+      setIsBannerVisible(false);
     };
 
     window.addEventListener("max4:open-cookie-settings", handleOpenSettings);
@@ -210,47 +210,41 @@ export function CookieConsent() {
       ) : null}
 
       {isSettingsOpen ? (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/45 px-4 py-6">
-          <div className="w-full max-w-2xl rounded-[2rem] border border-white/30 bg-white p-6 shadow-[0_24px_80px_rgba(0,0,0,0.24)] sm:p-8">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/45 px-3 py-4 sm:px-4 sm:py-6">
+          <div className="max-h-[92vh] w-full max-w-2xl overflow-y-auto rounded-[1.5rem] border border-white/30 bg-white p-4 shadow-[0_24px_80px_rgba(0,0,0,0.24)] sm:rounded-[2rem] sm:p-8">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[var(--brand)]">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)] sm:text-sm sm:tracking-[0.22em]">
                   Nastavenia cookies
                 </p>
-                <h2 className="mt-2 font-[family:var(--font-display)] text-3xl uppercase leading-none">
+                <h2 className="mt-2 font-[family:var(--font-display)] text-2xl uppercase leading-none sm:text-3xl">
                   Spravujte súhlasy
                 </h2>
               </div>
               <button
                 type="button"
                 onClick={() => setIsSettingsOpen(false)}
-                className="rounded-full border border-black/10 px-4 py-2 text-sm transition hover:bg-black/5"
+                aria-label="Zavrieť"
+                className="text-3xl leading-none text-black"
               >
-                Zavrieť
+                x
               </button>
             </div>
 
-            <div className="mt-8 grid gap-4">
-              <div className="rounded-[1.5rem] border border-black/10 bg-[var(--background)] p-5">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <h3 className="text-lg font-semibold">Nevyhnutné cookies</h3>
-                    <p className="mt-2 text-sm leading-7 text-[color:var(--muted)]">
-                      Zabezpečujú základnú funkčnosť stránky a nie je možné ich vypnúť.
-                    </p>
-                  </div>
+            <div className="mt-6 grid gap-3 sm:mt-8 sm:gap-4">
+              <div className="rounded-[1.25rem] border border-black/10 bg-[var(--background)] p-4 sm:rounded-[1.5rem] sm:p-5">
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="pr-2 text-base font-semibold sm:text-lg">Nevyhnutné cookies</h3>
                   <Toggle checked disabled />
                 </div>
+                <p className="mt-3 text-sm leading-6 text-[color:var(--muted)]">
+                  Zabezpečujú základnú funkčnosť stránky a nie je možné ich vypnúť.
+                </p>
               </div>
 
-              <div className="rounded-[1.5rem] border border-black/10 bg-[var(--background)] p-5">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <h3 className="text-lg font-semibold">Analytické cookies</h3>
-                    <p className="mt-2 text-sm leading-7 text-[color:var(--muted)]">
-                      Pomáhajú nám lepšie porozumieť návštevnosti a správaniu používateľov.
-                    </p>
-                  </div>
+              <div className="rounded-[1.25rem] border border-black/10 bg-[var(--background)] p-4 sm:rounded-[1.5rem] sm:p-5">
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="pr-2 text-base font-semibold sm:text-lg">Analytické cookies</h3>
                   <Toggle
                     checked={draft.analytics}
                     onChange={() =>
@@ -261,16 +255,14 @@ export function CookieConsent() {
                     }
                   />
                 </div>
+                <p className="mt-3 text-sm leading-6 text-[color:var(--muted)]">
+                  Pomáhajú nám lepšie porozumieť návštevnosti a správaniu používateľov.
+                </p>
               </div>
 
-              <div className="rounded-[1.5rem] border border-black/10 bg-[var(--background)] p-5">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <h3 className="text-lg font-semibold">Marketingové cookies</h3>
-                    <p className="mt-2 text-sm leading-7 text-[color:var(--muted)]">
-                      Umožňujú pracovať s reklamnými a remarketingovými nástrojmi, ak ich v budúcnosti nasadíte.
-                    </p>
-                  </div>
+              <div className="rounded-[1.25rem] border border-black/10 bg-[var(--background)] p-4 sm:rounded-[1.5rem] sm:p-5">
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="pr-2 text-base font-semibold sm:text-lg">Marketingové cookies</h3>
                   <Toggle
                     checked={draft.marketing}
                     onChange={() =>
@@ -281,10 +273,13 @@ export function CookieConsent() {
                     }
                   />
                 </div>
+                <p className="mt-3 text-sm leading-6 text-[color:var(--muted)]">
+                  Umožňujú pracovať s reklamnými a remarketingovými nástrojmi, ak ich v budúcnosti nasadíte.
+                </p>
               </div>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-2 sm:mt-8 sm:gap-3">
               <button
                 type="button"
                 onClick={() =>
@@ -294,7 +289,7 @@ export function CookieConsent() {
                     marketing: false,
                   })
                 }
-                className="rounded-full border border-black/10 px-5 py-3 text-sm font-semibold transition hover:bg-black/5"
+                className="rounded-full border border-black/10 px-4 py-2.5 text-xs font-semibold transition hover:bg-black/5 sm:px-5 sm:py-3 sm:text-sm"
               >
                 Len nevyhnutné
               </button>
@@ -307,7 +302,7 @@ export function CookieConsent() {
                     marketing: true,
                   })
                 }
-                className="rounded-full border border-black/10 px-5 py-3 text-sm font-semibold transition hover:bg-black/5"
+                className="rounded-full border border-black/10 px-4 py-2.5 text-xs font-semibold transition hover:bg-black/5 sm:px-5 sm:py-3 sm:text-sm"
               >
                 Povoliť všetko
               </button>
@@ -320,7 +315,7 @@ export function CookieConsent() {
                     marketing: draft.marketing,
                   })
                 }
-                className="rounded-full bg-[var(--brand)] px-5 py-3 text-sm font-semibold text-white transition hover:brightness-110"
+                className="rounded-full bg-[var(--brand)] px-4 py-2.5 text-xs font-semibold text-white transition hover:brightness-110 sm:px-5 sm:py-3 sm:text-sm"
               >
                 Uložiť nastavenia
               </button>
