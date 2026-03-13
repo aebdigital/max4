@@ -44,15 +44,14 @@ export async function POST(request: Request) {
   }
 
   const smtpApiKey = process.env.SMTP2GO_API_KEY;
-  const toEmail = process.env.SMTP2GO_TO_EMAIL ?? "servismax4@gmail.com";
-  const fromEmail = process.env.SMTP2GO_FROM_EMAIL;
-  const senderName = process.env.SMTP2GO_FROM_NAME ?? "MAX4 Web";
+  const toEmail = process.env.CONTACT_FORM_RECIPIENT ?? "servismax4@gmail.com";
+  const fromEmail = process.env.SMTP2GO_SENDER;
 
   if (!smtpApiKey || !fromEmail) {
     return NextResponse.json(
       {
         error:
-          "Formulár ešte nie je dokončený na serveri. Nastavte SMTP2GO_API_KEY a SMTP2GO_FROM_EMAIL.",
+          "Formulár ešte nie je dokončený na serveri. Nastavte CONTACT_FORM_RECIPIENT, SMTP2GO_API_KEY a SMTP2GO_SENDER.",
       },
       { status: 500 },
     );
@@ -110,7 +109,7 @@ export async function POST(request: Request) {
         },
         {
           header: "X-MAX4-Source",
-          value: senderName,
+          value: fromEmail,
         },
       ],
     }),
