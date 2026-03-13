@@ -1,4 +1,7 @@
+import Link from "next/link";
 import Image from "next/image";
+import { ContactForm } from "@/components/contact-form";
+import { SiteFooter } from "@/components/site-footer";
 
 const services = [
   {
@@ -310,7 +313,9 @@ export default function Home() {
           </div>
 
           <div className="rounded-[2.5rem] border border-[var(--line)] bg-[var(--panel)] p-8 shadow-[var(--shadow)] sm:p-10">
-            <div className="grid gap-8 sm:grid-cols-2">
+            <ContactForm />
+
+            <div className="mt-8 grid gap-8 sm:grid-cols-2">
               <div>
                 <p className="text-sm uppercase tracking-[0.28em] text-[var(--brand)]">Adresa</p>
                 <p className="mt-3 text-base leading-8 text-[color:var(--muted)]">
@@ -338,24 +343,27 @@ export default function Home() {
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
-
-            <div className="mt-8 flex flex-col gap-4 border-t border-[var(--line)] pt-6 text-sm text-[color:var(--muted)] sm:flex-row sm:items-center sm:justify-between">
-              <p>@ Max4 all rights reserved 2024</p>
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="https://www.max4.sk/ochrana-osobnych-udajov"
-                  className="underline decoration-[var(--brand)] underline-offset-4"
-                >
-                  Ochrana osobných údajov
-                </a>
-                <a href="https://aebdigital.sk/" className="underline decoration-[var(--brand)] underline-offset-4">
-                  Tvorba stránky - AEB Digital
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </section>
+
+      <section className="px-6 pb-6 sm:px-8 lg:px-12">
+        <div className="mx-auto w-full max-w-7xl rounded-[2rem] border border-[var(--line)] bg-white/75 px-6 py-5 text-sm leading-7 text-[color:var(--muted)] shadow-[var(--shadow)] backdrop-blur">
+          <p>
+            Kontaktný formulár spracúva meno a priezvisko, e-mailovú adresu a telefónne číslo na účel odpovede na váš
+            dopyt. Viac nájdete v{" "}
+            <Link
+              href="/ochrana-osobnych-udajov"
+              className="underline decoration-[var(--brand)] underline-offset-4"
+            >
+              ochrane osobných údajov
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+
+      <SiteFooter />
     </main>
   );
 }

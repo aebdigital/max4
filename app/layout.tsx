@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Anton, Inter } from "next/font/google";
+import { CookieConsent } from "@/components/cookie-consent";
 import "./globals.css";
 
 const anton = Anton({
@@ -32,7 +33,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="sk">
-      <body className={`${anton.variable} ${inter.variable}`}>{children}</body>
+      <body className={`${anton.variable} ${inter.variable}`}>
+        {children}
+        <CookieConsent />
+      </body>
     </html>
   );
 }
