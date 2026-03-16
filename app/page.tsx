@@ -48,12 +48,6 @@ const contactItems = [
     href: "tel:+421904427684",
     note: "Volajte pre servis a objednanie termínu",
   },
-  {
-    label: "NONSTOP ODŤAHOVKA",
-    value: "+421 903 729 792",
-    href: "tel:+421903729792",
-    note: "Rýchla pomoc na ceste 24/7",
-  },
 ] as const;
 
 const reasons = [
@@ -173,7 +167,7 @@ export default function Home() {
             </div>
             <a
               href="#kontakt"
-              className="w-fit rounded-full border border-[var(--brand)] px-7 py-4 font-[family:var(--font-display)] text-2xl uppercase leading-none text-[var(--foreground)] transition hover:bg-[var(--brand)] hover:text-white"
+              className="w-fit rounded-full border border-[var(--brand)] px-7 py-4 font-[family:var(--font-display)] text-2xl uppercase leading-none text-[var(--foreground)] transition hover:-translate-y-0.5 hover:bg-[var(--brand)] hover:!text-white hover:shadow-[0_18px_40px_rgba(74,60,240,0.45)] hover:brightness-110"
             >
               Kontakt
             </a>
