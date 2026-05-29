@@ -70,7 +70,7 @@ export function SiteHeader({ home = false }: SiteHeaderProps) {
               <Link
                 key={item.href}
                 href={item.href}
-                className="font-medium uppercase drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] transition hover:text-white/75"
+                className="nav-link-underline font-medium uppercase drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]"
                 style={{
                   color: "#ffffff",
                   fontFamily: "var(--font-body), sans-serif",

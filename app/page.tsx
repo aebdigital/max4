@@ -56,10 +56,6 @@ const reasons = [
     copy: "Servis všetkých značiek motorových vozidiel s dôrazom na kvalitu opráv, pružnosť a osobný prístup.",
   },
   {
-    title: "NONSTOP odťahová služba",
-    copy: "Ak sa vaše vozidlo pokazí na ceste a neviete sa dostať domov, rýchlo a bezpečne odtiahneme vaše vozidlo na požadované miesto. Volajte na číslo +421 903 729 792.",
-  },
-  {
     title: "Diagnostika vozidiel",
     copy: "Využívame moderné elektronické nástroje na identifikáciu a riešenie problémov s vaším vozidlom, vrátane analýzy pamäte závad riadiacich jednotiek.",
   },
@@ -82,7 +78,7 @@ export default function Home() {
                 <p className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-white/80">
                   Bratislava · Rožňavská 2
                 </p>
-                <h1 className="max-w-4xl font-[family:var(--font-display)] text-4xl uppercase leading-[0.92] text-white sm:text-7xl lg:text-[7.5rem]">
+                <h1 className="max-w-4xl font-[family:var(--font-display)] text-5xl uppercase leading-[1.2] text-white sm:text-7xl lg:text-[7.5rem]">
                   Autoservis, na ktorý sa dá spoľahnúť
                 </h1>
                 <p className="mt-6 max-w-4xl text-base leading-7 text-white/92 sm:mt-8 sm:text-[1.15rem] sm:leading-8">
@@ -130,7 +126,7 @@ export default function Home() {
 
         <div className="flex flex-col justify-center">
           <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--brand)]">O nás</p>
-          <h2 className="mt-4 font-[family:var(--font-display)] text-5xl uppercase leading-[0.9] text-[var(--foreground)] sm:text-6xl">
+          <h2 className="mt-4 font-[family:var(--font-display)] text-5xl uppercase leading-[1.2] text-[var(--foreground)] sm:text-6xl">
             Partner pre servis, údržbu aj rýchlu pomoc na ceste
           </h2>
           <p className="mt-8 text-xl leading-8 text-[color:var(--muted)]">
@@ -161,7 +157,7 @@ export default function Home() {
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[var(--brand)]">Naše služby</p>
-              <h2 className="mt-4 font-[family:var(--font-display)] text-5xl uppercase leading-none text-[var(--brand)] sm:text-6xl">
+              <h2 className="mt-4 font-[family:var(--font-display)] text-5xl uppercase leading-[1.2] text-[var(--brand)] sm:text-6xl">
                 Kompletný servis na jednom mieste
               </h2>
             </div>
@@ -188,7 +184,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="pt-5">
-                  <h3 className="font-[family:var(--font-display)] text-4xl uppercase leading-none text-[var(--foreground)]">
+                  <h3 className="font-[family:var(--font-display)] text-4xl uppercase leading-[1.2] text-[var(--foreground)]">
                     {service.title}
                   </h3>
                   <p className="mt-5 text-lg leading-8 text-[color:var(--muted)]">{service.description}</p>
@@ -203,7 +199,7 @@ export default function Home() {
         <div className="mx-auto grid w-full max-w-[92rem] gap-8 px-6 sm:px-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:px-12">
           <div className="p-0 sm:p-2">
             <p className="text-sm uppercase tracking-[0.32em] text-white/70">Prečo práve my?</p>
-            <h2 className="mt-4 font-[family:var(--font-display)] text-5xl uppercase leading-none sm:text-6xl">
+            <h2 className="mt-4 font-[family:var(--font-display)] text-5xl uppercase leading-[1.2] sm:text-6xl">
               Kvalita opráv bez zbytočných kompromisov
             </h2>
             <p className="mt-8 max-w-4xl text-xl leading-8 text-white/88">
@@ -240,7 +236,7 @@ export default function Home() {
           <div className="grid gap-12 lg:grid-cols-[minmax(0,0.62fr)_minmax(0,1fr)]">
             <div>
               <p className="text-sm uppercase tracking-[0.32em] text-[var(--brand)]">Kontakt</p>
-              <h2 className="mt-4 font-[family:var(--font-display)] text-5xl uppercase leading-none sm:text-6xl">
+              <h2 className="mt-4 font-[family:var(--font-display)] text-5xl uppercase leading-[1.2] sm:text-6xl">
                 Zavolajte nám
               </h2>
 
@@ -278,7 +274,7 @@ export default function Home() {
                   <h3 className="font-[family:var(--font-display)] text-2xl uppercase leading-none text-white/72 sm:text-3xl">
                     {item.label}
                   </h3>
-                  <p className="mt-4 font-[family:var(--font-display)] text-[1.8rem] uppercase leading-[0.95] text-white sm:text-6xl">
+                  <p className="mt-4 font-[family:var(--font-display)] text-[1.8rem] uppercase leading-[1.2] text-white sm:text-6xl">
                     {item.value}
                   </p>
                   <p className="mt-4 text-lg leading-7 text-white/78">{item.note}</p>
